@@ -1,4 +1,4 @@
-# Automated Stratigraphic Correlation via Constraint-Based DTW
+# Automated Stratigraphic Correlation via Constraint-Based DSW
 
 ## Overview
 
