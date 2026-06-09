@@ -1,8 +1,8 @@
-# Automated Stratigraphic Correlation via Constraint-Based DSW
+# # Well-to-Well Correlation Analysis of Geophysical Well-Log Data of the October Oil Field, Gulf of Suez, Using Dynamic Space Warping Technique
 
 ## Overview
 
-This repository provides a Python implementation for automated stratigraphic well-log correlation using Dynamic Space Warping (DsW) constrained by Sakoe–Chiba window parameter.
+This repository provides a Python implementation for automated stratigraphic well-log correlation using Dynamic Space Warping (DSW) constrained by Sakoe–Chiba window parameter.
 
 The workflow demonstrates automated well-to-well correlation and evaluates alignment quality under varying warping constraints.
 
