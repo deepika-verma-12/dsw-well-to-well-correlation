@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides a Python implementation for automated stratigraphic well-log alignment using Dynamic Time Warping (DTW) constrained by a customizable Sakoe–Chiba window parameter.
+This repository provides a Python implementation for automated stratigraphic well-log correlation using Dynamic Space Warping (DsW) constrained by Sakoe–Chiba window parameter.
 
 The workflow demonstrates automated well-to-well correlation and evaluates alignment quality under varying warping constraints.
 
