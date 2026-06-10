@@ -59,3 +59,5 @@ If you wish to replicate the workflow using the provided files:
 ## Author
 
 Deepika Verma
+Reyi Karthik
+E. Chandrasekhar
