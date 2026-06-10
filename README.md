@@ -56,8 +56,11 @@ If you wish to replicate the workflow using the provided files:
 * matplotlib
 * openpyxl
 
-## Author
+## Authors
 
-Deepika Verma (IIT Bombay),
-Reyi Karthik (IIT Bombay),
-E. Chandrasekhar (IIT Bombay)
+Deepika Verma, Reyi Karthik, E. Chandrasekhar
+
+## Affiliation
+
+Department of Earth Sciences,
+Indian Institute of Technology Bombay
