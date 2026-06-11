@@ -43,6 +43,7 @@ pip install -r requirements.txt
 
 3. The synthetic datasets are located in the data/ directory.
 4. All notebooks in notebooks/ are configured to access the datasets through the relative path ../data/.
+5. Execute all cells.
 
  
 ## Dependencies
