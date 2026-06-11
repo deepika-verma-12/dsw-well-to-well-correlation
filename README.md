@@ -34,7 +34,7 @@ LICENSE
 
 ## How to Run
 
-1. Clone the repository and navigate into it.
+1. Clone the repository and navigate to the project directory.
 2. Install dependencies:
 
 ```bash
@@ -43,8 +43,8 @@ pip install -r requirements.txt
 
 3. The synthetic datasets are located in the data/ directory.
 4. All notebooks in notebooks/ are configured to access the datasets through the relative path ../data/.
- 
 
+ 
 ## Dependencies
 
 * numpy
