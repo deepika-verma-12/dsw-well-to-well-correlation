@@ -41,17 +41,9 @@ LICENSE
 pip install -r requirements.txt
 ```
 
-3. Run `notebooks/generate_dummy_data.ipynb` to initialize the data environment.
-4. Open and execute any structural pair notebook (e.g., `gs172_2_j5.ipynb`) to reproduce the results
-
-## Note for Execution
-
-The notebooks in this repository are preserved in their finalized, fully-executed state to showcase the exact mathematical outputs and figures presented in the study. 
-
-If you wish to replicate the workflow using the provided files:
-* **File Directory:** Ensure all synthetic `.xlsx` log files remain inside the `data/` folder, as the correlation notebooks are configured to pull inputs via the path `../data/`.
-
-
+3. The synthetic datasets are located in the data/ directory.
+4. All notebooks in notebooks/ are configured to access the datasets through the relative path ../data/.
+ 
 
 ## Dependencies
 
