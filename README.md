@@ -1,10 +1,16 @@
-# # Well-to-Well Correlation Analysis of Geophysical Well-Log Data of the October Oil Field, Gulf of Suez, Using Dynamic Space Warping Technique
+# # Automated Well-to-Well Correlation Using Dynamic Space Warping
 
 ## Overview
 
 This repository provides a Python implementation for automated stratigraphic well-log correlation using Dynamic Space Warping (DSW) constrained by Sakoe–Chiba window parameter.
 
 The workflow demonstrates automated well-to-well correlation and evaluates alignment quality under varying warping constraints.
+
+## Related Manuscript
+
+This repository accompanies the manuscript:
+
+"Well-to-Well Correlation Analysis of Geophysical Well-Log Data of the October Oil Field, Gulf of Suez, Using Dynamic Space Warping Technique"
 
 ## Data Availability Statement
 
