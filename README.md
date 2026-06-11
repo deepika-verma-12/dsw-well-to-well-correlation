@@ -10,7 +10,7 @@ The workflow demonstrates automated well-to-well correlation and evaluates align
 
 This repository accompanies the manuscript:
 
-"Well-to-Well Correlation Analysis of Geophysical Well-Log Data of the October Oil Field, Gulf of Suez, Using Dynamic Space Warping Technique"
+"Well-to-Well Correlation analysis of Geophysical Well-log data of the October Oil Field Gulf of Suez Using Dynamic Space Warping Technique"
 
 ## Data Availability Statement
 
