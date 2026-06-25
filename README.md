@@ -31,15 +31,18 @@ When a well-correlation notebook cell sequence is executed, the software operate
 
 ---
 
+
 ## 🚀 How-To Tutorial: Step-by-Step Replication
 
-Follow these steps to initialize your local workspace environment and run the full pipeline using the synthetic sandbox data.
+Follow these steps to initialize your sandbox environment and run the alignment workflows:
 
-### Step 1: Environment Setup
-Clone this repository to your local system and install the required library dependencies using your preferred package manager:
-```bash
-git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
-cd dsw-well-to-well-correlation
-pip install -r requirements.txt
+### Step 1: Initialize the Synthetic Data Environment
+Because the authentic subsurface datasets are protected under data privacy guidelines, you must programmatically initialize the simulation log files before running matches:
+1. Launch your local Jupyter interface (`jupyter notebook`) or open the directory within your preferred IDE workspace.
+2. Open **`generate_dummy_data.ipynb`** and select **Run All Cells**.
+3. **Expected Behavior:** The script initializes an automated generation loop, programmatically building mock spreadsheets containing synthetic randomized logs spanning a $5000\text{--}5150\text{ ft}$ sequence interval. These generate directly into your main repository folder, making them instantly accessible to the correlation notebooks.
 
-Step 2: Initialize the Synthetic Data EnvironmentBecause authentic subsurface logs are redacted to protect data privacy guidelines, you must programmatically initialize the simulation databases before running matches:Launch your local Jupyter interface (jupyter notebook) or open the directory within your IDE workspace.Open generate_dummy_data.ipynb and select Run All Cells.Expected Behavior: The script initializes an automated generation loop, building mock spreadsheets containing synthetic randomized logs spanning a $5000\text{--}5150\text{ ft}$ sequence interval.Action Required: The mock logs generate directly into your main repository folder, making them instantly accessible to the correlation notebooks.Step 3: Run Alignment Computations & DiagnosticsOpen any matching combination profile notebook (e.g., gs172_2_j5.ipynb).Execute the cells sequentially. The data loading blocks will pull the generated spreadsheets, map the log variables, and calculate the cumulative distance matrix.Verify Output: The final code cell displays and exports your high-resolution well panels with crisp, dark-red correlation lines connecting identical structural horizons across the stratigraphy using your optimal window_percents value.
+### Step 2: Run Alignment Computations & Diagnostics
+1. Open any matching combination profile notebook (e.g., **`gs172_2_j5.ipynb`**).
+2. Execute the cells sequentially. The data loading blocks will automatically pull the generated spreadsheets, map the log variables, and calculate the cumulative distance matrix.
+3. **Verify Output:** The final code cell displays and exports your high-resolution well panels with crisp, dark-red correlation lines connecting identical structural horizons across the stratigraphy using your optimal `window_percents` ($\phi$) value.
