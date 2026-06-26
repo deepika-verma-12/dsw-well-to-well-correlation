@@ -1,15 +1,24 @@
-# How-To Tutorial: Replicating Strategic Match Implementations
+# How-To Tutorial: Step-by-Step Pipeline Replication
 
-This tutorial provides a complete step-by-step walkthrough to initialize your environment, programmatically build the synthetic logs sandbox, and run the matching pipeline.
+This tutorial guides you through creating the synthetic testing sandbox and running the correlation workflow.
 
 ---
 
-## Phase 1: Environment & Directory Preparation
+## Phase 1: Initialize the Synthetic Environment
+Because raw field datasets are protected to safeguard corporate data privacy, you must programmatically compile the synthetic testing files:
 
-1. Open your system command terminal and clone the repository:
-   ```bash
-   git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
-   cd dsw-well-to-well-correlation
-   Install the necessary software libraries using the provided requirements document:Bashpip install -r requirements.txt
-Verify that your root directory contains an empty folder named data/ and an executable workspace named notebooks/.Phase 2: Generating the Synthetic Sandbox EnvironmentBecause the authentic logging profiles remain confidential to respect corporate privacy, you must first initialize the simulation database.Launch your local Jupyter environment by typing jupyter notebook in your terminal, or open the folder workspace within VS Code.Navigate into the notebooks/ directory and open generate_dummy_data.ipynb.Click "Run All Cells".Expected Behavior: The notebook initializes a randomized seed generation loop and programmatically builds 8 standard Excel files (All-NO159-2.xlsx, All-J5 .xlsx, etc.) representing active logging intervals from $5000\text{ to }5150\text{ ft}$.Action Required: The dummy file outputs will generate inside the folder where the script is located. To match the file pathways expected by your correlation engines, make sure these generated .xlsx spreadsheets are placed inside your root data/ directory.Phase 3: Executing Well Alignment ComputationsWith the log assets now populated inside the database, you can run any matching combination profile.Open a target pair notebook from the notebooks/ directory—for example, gs172_2_j5.ipynb.Run the initialization blocks to load the standardized dependencies (pandas, numpy, scikit-learn).Execute the data loading block. The spreadsheet data will pull from ../data/ and map column fields directly into active arrays.Run the core DTW optimization computation. The system will restrict path steps to your target window limit (window_p = 0.11).Review Results: The final cell executes the specialized graphic generation block. It will output a publication-ready vertical well-to-well matching display with crisp, dark-red correlation ladders connecting the stratigraphy. A copy of the graphic is generated and saved automatically into a local subfolder named L_curve/.
+1. Launch your Jupyter Notebook environment (`jupyter notebook`) or open the repository within your IDE.
+2. Open **`generate_dummy_data.ipynb`** and select **Run All Cells**.
+3. **Expected Behavior:** The script runs an automated seed generation loop to simulate active stratigraphic sequences. It programmatically builds mock logging spreadsheets spanning a $5000\text{--}5150\text{ ft}$ interval.
+4. **File Placement:** The mock Excel logs generate directly into your main repository root directory, making them instantly accessible to the correlation scripts without requiring manual moving.
 
+---
+
+## Phase 2: Run Well Alignment Computations
+
+With your synthetic sandbox data successfully initialized, you can run any individual matching notebook:
+
+1. Open a target matching combination file (e.g., **`gs172_2_j5.ipynb`**).
+2. Execute the setup cells to import baseline scientific libraries (`pandas`, `numpy`, `matplotlib`, `scikit-learn`).
+3. Run the data ingestion block. The notebook will automatically pull the synthetic files from your root folder, index the log variables, and run the constrained cost matrix calculations.
+4. **Verify the Results:** The final cell executes the custom visualization block, outputting a high-resolution, twin-panel plot with dark red tie-lines linking corresponding horizons across the well structures using your optimal `window_percents` ($\phi$) value. The output is automatically saved as a production-grade image file inside your local `/L_curve` folder.
