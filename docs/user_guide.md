@@ -1,47 +1,32 @@
-# User Guide: Data Structures, Options, and Expected Behavior
+# User Guide: Data Structures, Hyperparameters, and Expected Behavior
 
-This manual details the input specifications, runtime configuration options, and mathematical execution profiles for the Dynamic Time Warping (DTW) stratigraphic matching software.
-
----
-
-## 1. Input Specifications & Preprocessing
-
-The algorithm operates on tabular well-log data formats. To process custom fields or run the provided notebooks, inputs must strictly comply with the following structures:
-
-### File Format
-* **Extension:** Microsoft Excel (`.xlsx`) workbooks.
-* **Sheet Placement:** The logging data must reside in the first sheet of the workbook.
-
-### Data Columns (Ordering Framework)
-The correlation arrays rely on positional column mapping. Input spreadsheets must maintain this index orientation:
-| Column Index | Field Name | Description | Units | Type |
-| :--- | :--- | :--- | :--- | :--- |
-| `0` | `Depth` | Measured continuous depth track | Feet (ft) | Float |
-| `1` | `GR (API)` / `GR` | Gamma Ray logging curve readings | API units | Float |
-| `2` | `Neutron Porosity` / `NPHI` | Neutron Porosity index logging curve values | Decimals / v/v | Float |
-
-### Data Preprocessing
-Before cost-matrix compilation, the program automatically scales data via `StandardScaler`:
-$$z = \frac{x - \mu}{\sigma}$$
-This standardizes variance across the different scaling magnitudes of Gamma Ray ($\sim 0\text{--}150\text{ API}$) and Neutron Porosity ($\sim 0.05\text{--}0.45\text{ v/v}$), ensuring both measurements contribute equally to the distance calculation.
+This document serves as the formal technical specification manual for the constraint-based DTW stratigraphic alignment software.
 
 ---
 
-## 2. Configuration Options & Hyperparameters
+## 1. Input Data Specifications & Preprocessing
 
-The software provides tunable alignment parameters inside the notebook execution blocks:
+Custom user datasets must strictly match the array-slicing architecture defined below:
+* **File Format:** Microsoft Excel (`.xlsx`) workbooks. The data arrays must be located on the first active spreadsheet.
+* **Structural Column Mapping:** Tracking paths pull data via direct positional index locations:
+  * **Index 0:** `Depth` (Continuous depth vector in feet).
+  * **Index 1:** `GR` / `GR (API)` (Gamma Ray curve readings in standard API units).
+  * **Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity index data values).
+* **Automatic Scaling:** Input curves are automatically scaled via a standard variance normalization formula ($z = (x - \mu)/\sigma$). This ensures Gamma Ray logs ($\sim 0\text{--}150\text{ API}$) and Neutron Porosity logs ($\sim 0.05\text{--}0.45\text{ v/v}$) carry uniform mathematical weight during cumulative cost calculation.
 
-* **Window Constraint Parameter (`window_p`):** Represents the Sakoe-Chiba constraint width expressed as a decimal fraction ($0.00$ to $1.00$) of the total sequence length. 
-  * *Example:* A `window_p = 0.11` restricts the optimal warp path searching grid to a band within $11\%$ of the main diagonal matrix tracking line.
-* **Line Density Step (`line_density_step`):** Controls visualization layout. Adjusts how many matched tie-lines are drawn between well panels (e.g., `step = 120` draws every 120th path step to prevent graphic clutter).
+---
+
+## 2. Tunable Hyperparameters & Software Options
+
+* `window_percents` (Float, range `0.0` to `1.0`): Represents the optimized Sakoe-Chiba window constraint width (notated as $\phi$ in the manuscript text) expressed as a decimal fraction of total sequence length. Setting `window_percents = 0.11` restricts the path optimization grid to an 11% diagonal corridor bandwidth, preventing geologically impossible thickness variations.
+* `line_density_step` (Integer): Adjusts the step interval for plotting (e.g., `step = 120` draws every 120th path step to keep the diagnostic figures clear and clean).
 
 ---
 
 ## 3. Expected Operational Behavior
 
 When execution cells are launched, the operational pipeline steps run sequentially:
-
-1. **Matrix Initialization:** An $N \times M$ Euclidean distance matrix is populated between the multi-variate tracks of Well A and Well B.
-2. **Constraint Masking:** Matrix cells violating the Sakoe-Chiba boundary condition $\lvert i - j \rvert > \text{round}(p \times \max(N, M))$ are populated with infinity ($\infty$), ensuring the optimization pass cannot route through unrealistic geological thicknesses.
-3. **Warp Optimization:** The minimum cumulative cost path is solved back from $(N, M)$ to $(0,0)$.
-4. **Visualization Output:** A high-resolution matplotlib figure (300 to 400 DPI) is displayed and saved locally inside the `/L_curve` folder, anchoring dark red tie-lines perfectly to the inner borders of the well data tracks.
+1. **Matrix Initialization:** An $N \times M$ Euclidean distance matrix is computed between the multi-variate log tracks.
+2. **Boundary Masking:** Matrix nodes violating the Sakoe-Chiba constraint condition ($\lvert i - j \rvert > \text{round}(\phi \times \max(N, M))$) are flagged with infinity ($\infty$).
+3. **Path Optimization:** The minimum cumulative cost path is solved back from $(N, M)$ to $(0,0)$.
+4. **Graphic Export:** Generates a high-contrast 300+ DPI twin-panel vector visualization. The output saves automatically as a `.jpg` graphic file inside a local `/L_curve` subfolder.
