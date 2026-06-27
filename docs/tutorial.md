@@ -24,4 +24,10 @@ Open Notebook Navigate into the notebooks/ directory and open a target processin
 
 Execute Cells Execute the code blocks sequentially from top to bottom.
 
-📋 Expected Pipeline BehaviorData Ingestion: The notebook loads the designated .xlsx workbooks directly from the ../data/ directory.Preprocessing & Scaling: The numeric log channels are isolated and normalized automatically.Warp Optimization: The constrained Dynamic Time Warping path runs utilizing your optimal window_percents ($\phi$) constraint.Review Results: The final cell renders a high-contrast well panel plot with background stratigraphic zone color-fills and clean, dark-red correlation lines. Figures save automatically as .jpg files.
+📋 Expected Pipeline BehaviorData Ingestion: The notebook loads the designated .xlsx workbooks directly from the ../data/ directory.
+
+Preprocessing & Scaling: The numeric log channels are isolated and normalized automatically.
+
+Warp Optimization: The constrained Dynamic Time Warping path runs utilizing your optimal window_percents ($\phi$) constraint.
+
+Review Results: The final cell renders a high-contrast well panel plot with background stratigraphic zone color-fills and clean, dark-red correlation lines. Figures save automatically as .jpg files.
