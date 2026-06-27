@@ -1,32 +1,46 @@
-# User Guide: Data Structures, Hyperparameters, and Expected Behavior
+# User Guide: Software Specifications, Configuration Options & Expected Behavior
 
-This document serves as the formal technical specification manual for the constraint-based DTW stratigraphic alignment software.
+This document serves as the formal technical manual describing the underlying data structures, hyperparameter selections, and algorithmic execution behaviors for the constraint-based well-log alignment framework.
+
+
+## 📊 1. Input Data Specifications & Preprocessing
+
+To ensure seamless execution, target subsurface profiles must strictly conform to the structural layout outlined below. 
+
+### Spreadsheet Schema Requirements
+* **File Format:** Microsoft Excel (`.xlsx`) workbooks. Data arrays must reside within the first active spreadsheet.
+* **Direct Structural Indexing:** Slicing arrays map input logging curves based on explicit positional column channels:
+  * **Column Index 0:** `Depth` (Continuous numeric tracking vector recorded in feet).
+  * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray logs recorded in standard API units).
+  * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log channel index values).
+
+### Automated Preprocessing
+Raw geophysical measurements span completely different physical magnitudes—Gamma Ray ranges from $0\text{--}150\text{ API}$ while Neutron Porosity evaluates fractions between $0.05\text{--}0.45\text{ v/v}$. 
+
+To counter signal imbalance, the software automatically standardizes input vectors prior to distance matrix construction utilizing a standard variance scaling approach:
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+This guarantees both stratigraphic features exert uniform mathematical weight during path optimization regardless of their native recording units.
 
 ---
 
-## 1. Input Data Specifications & Preprocessing
+## ⚙️ 2. Tunable Hyperparameters & Software Options
 
-Custom user datasets must strictly match the array-slicing architecture defined below:
-* **File Format:** Microsoft Excel (`.xlsx`) workbooks. The data arrays must be located on the first active spreadsheet.
-* **Structural Column Mapping:** Tracking paths pull data via direct positional index locations:
-  * **Index 0:** `Depth` (Continuous depth vector in feet).
-  * **Index 1:** `GR` / `GR (API)` (Gamma Ray curve readings in standard API units).
-  * **Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity index data values).
-* **Automatic Scaling:** Input curves are automatically scaled via a standard variance normalization formula ($z = (x - \mu)/\sigma$). This ensures Gamma Ray logs ($\sim 0\text{--}150\text{ API}$) and Neutron Porosity logs ($\sim 0.05\text{--}0.45\text{ v/v}$) carry uniform mathematical weight during cumulative cost calculation.
+Users can modify specific core control parameters directly inside the individual well-pair processing notebooks:
+
+* **`window_percents`** (Float, range `0.0` to `1.0`): Defines the optimal Sakoe-Chiba window constraint width. This maps directly to the parameter notated as $\phi$ within the manuscript text. It is expressed as a decimal fraction of total sequence array length (e.g., setting `0.11` restricts the optimal warp path grid search computation to an 11% diagonal corridor bandwidth, enforcing geological reality by checking extreme thickness variations).
+* **`line_density_step`** (Integer): Controls visual output spacing. Adjusts the frequency of drawn correlation tie-lines across the plotting window (e.g., a setting of `120` instructs the renderer to plot lines at every 120th coordinate match to prevent graphical clutter).
 
 ---
 
-## 2. Tunable Hyperparameters & Software Options
+## 🧠 3. Expected Operational Behavior
 
-* `window_percents` (Float, range `0.0` to `1.0`): Represents the optimized Sakoe-Chiba window constraint width (notated as $\phi$ in the manuscript text) expressed as a decimal fraction of total sequence length. Setting `window_percents = 0.11` restricts the path optimization grid to an 11% diagonal corridor bandwidth, preventing geologically impossible thickness variations.
-* `line_density_step` (Integer): Adjusts the step interval for plotting (e.g., `step = 120` draws every 120th path step to keep the diagnostic figures clear and clean).
+When an individual alignment workbook cell timeline is triggered, the execution pipeline steps run through this systematic sequence:
 
----
-
-## 3. Expected Operational Behavior
-
-When execution cells are launched, the operational pipeline steps run sequentially:
-1. **Matrix Initialization:** An $N \times M$ Euclidean distance matrix is computed between the multi-variate log tracks.
-2. **Boundary Masking:** Matrix nodes violating the Sakoe-Chiba constraint condition ($\lvert i - j \rvert > \text{round}(\phi \times \max(N, M))$) are flagged with infinity ($\infty$).
-3. **Path Optimization:** The minimum cumulative cost path is solved back from $(N, M)$ to $(0,0)$.
-4. **Graphic Export:** Generates a high-contrast 300+ DPI twin-panel vector visualization. The output saves automatically as a `.jpg` graphic file inside a local `/L_curve` subfolder.
+1. **Euclidean Matrix Compilation:** Computes an $N \times M$ Euclidean distance grid evaluating the multivariate normalized log tracks.
+2. **Sakoe-Chiba Boundary Masking:** Coordinate cells that violate the configured constraint window corridor are actively intercepted:
+   $$\lvert i - j \rvert > \text{round}(\phi \times \max(N, M))$$
+   These out-of-bounds nodes are dynamically overwritten with infinity ($\infty$), blocking invalid match trajectories.
+3. **Warp Path Minimization:** Solves the cumulative minimum cost matching path from $(N, M)$ back to the initial anchor matrix node $(0,0)$ via dynamic programming.
+4. **Publication-Grade Graphics Export:** Renders a twin-panel log display with background color-fills mapping target stratigraphic zones (e.g., *Asl Marl*, *Asl Sand*, *Hawara Fm*). High-contrast correlation tie-lines anchor directly to the interior margins of the log frames. The output graphics automatically export as sharp, production-grade `.jpg` images stored inside a local folder.
