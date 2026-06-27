@@ -30,7 +30,6 @@ This guarantees both stratigraphic features exert uniform mathematical weight du
 Users can modify specific core control parameters directly inside the individual well-pair processing notebooks:
 
 * **`window_percents`** (Float, range `0.0` to `1.0`): Defines the optimal Sakoe-Chiba window constraint width. This maps directly to the parameter notated as $\phi$ within the manuscript text. It is expressed as a decimal fraction of total sequence array length (e.g., setting `0.11` restricts the optimal warp path grid search computation to an 11% diagonal corridor bandwidth, enforcing geological reality by checking extreme thickness variations).
-* **`line_density_step`** (Integer): Controls visual output spacing. Adjusts the frequency of drawn correlation tie-lines across the plotting window (e.g., a setting of `120` instructs the renderer to plot lines at every 120th coordinate match to prevent graphical clutter).
 
 ---
 
