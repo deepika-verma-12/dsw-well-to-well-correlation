@@ -33,13 +33,21 @@ Users can modify specific core control parameters directly inside the individual
 
 ---
 
-## 🧠 3. Expected Operational Behavior
+## 🧠 3. Expected Operational Behavior & Analytical Outputs
 
-When an individual alignment workbook cell timeline is triggered, the execution pipeline steps run through this systematic sequence:
+When a processing pipeline for a given well-pair is executed, the framework computes separate optimization pipelines for both Gamma Ray (GR) and Neutron Porosity (NPHI) logs. Each sequence follows a three-stage visual and computational workflow:
 
-1. **Euclidean Matrix Compilation:** Computes an $N \times M$ Euclidean distance grid evaluating the multivariate normalized log tracks.
-2. **Sakoe-Chiba Boundary Masking:** Coordinate cells that violate the configured constraint window corridor are actively intercepted:
-   $$\lvert i - j \rvert > \text{round}(\phi \times \max(N, M))$$
-   These out-of-bounds nodes are dynamically overwritten with infinity ($\infty$), blocking invalid match trajectories.
-3. **Warp Path Minimization:** Solves the cumulative minimum cost matching path from $(N, M)$ back to the initial anchor matrix node $(0,0)$ via dynamic programming.
-4. **Publication-Grade Graphics Export:** Renders a twin-panel log display with background color-fills mapping target stratigraphic zones (e.g., *Asl Marl*, *Asl Sand*, *Hawara Fm*). High-contrast correlation tie-lines anchor directly to the interior margins of the log frames. The output graphics automatically export as sharp, production-grade `.jpg` images stored inside a local folder.
+### Stage 1: Parameter Optimization via L-Curve Analysis
+* **Mechanism:** The software evaluates a range of Sakoe-Chiba constraint window widths against the total cumulative alignment cost.
+* **Output Graphic:** Generates an L-curve visualization displaying a distinct inflection elbow point (marking the transition into the "Stability Zone"). This automated selection identifies the mathematically optimal window percentage ($\phi$) constraint required to balance structural deformation against computational over-warping.
+
+### Stage 2: Cumulative Cost Matrix & Warping Path Overlay
+* **Mechanism:** Using the optimized window constraint ($\phi$), the software masks the out-of-bounds nodes of the distance grid with infinity ($\infty$). It then solves the absolute minimum cost path across the valid matrix space using dynamic programming.
+* **Output Graphic:** Renders a high-contrast 2D heat map of the cumulative cost matrix. The calculated minimum-distance path is overlaid directly on top as a vibrant, continuous cyan line trajectory tracking from matrix coordinate $(0,0)$ to $(N,M)$.
+
+### Stage 3: Final Stratigraphic Well-to-Well Correlation Panel
+* **Mechanism:** The discrete coordinate pairings from the calculated warp path are transformed into explicit depth-to-depth tie links.
+* **Output Graphic:** Renders a twin-panel depth log plot detailing the two target wells side-by-side. 
+  * The log tracks are displayed alongside background color-fills mapping key stratigraphic zones.
+  * Publication-ready, dark-red structural tie-lines lock corresponding horizons across the well path gap, cleanly visualizing the final structural alignment.
+  * **File Formats:** All plots are automatically exported directly as sharp, standalone `.jpg` image assets inside the project folder for manuscript assembly.
