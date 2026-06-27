@@ -1,24 +1,18 @@
 # How-To Tutorial: Step-by-Step Pipeline Replication
 
-This tutorial guides you through creating the synthetic testing sandbox and running the correlation workflow.
-
+This tutorial guides you through setting up your local repository workspace and running the well-log correlation workflow using the provided synthetic datasets.
 ---
 
-## Phase 1: Initialize the Synthetic Environment
-Because raw field datasets are protected to safeguard corporate data privacy, you must programmatically compile the synthetic testing files:
+## Phase 1: Environment Preparation
 
-1. Launch your Jupyter Notebook environment (`jupyter notebook`) or open the repository within your IDE.
-2. Open **`generate_dummy_data.ipynb`** and select **Run All Cells**.
-3. **Expected Behavior:** The script runs an automated seed generation loop to simulate active stratigraphic sequences. It programmatically builds mock logging spreadsheets spanning a $5000\text{--}5150\text{ ft}$ interval.
-4. **File Placement:** The mock Excel logs generate directly into your main repository root directory, making them instantly accessible to the correlation scripts without requiring manual moving.
+1. Open your system's terminal interface and clone this repository:
+   ```bash
+   git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
+   cd dsw-well-to-well-correlation
 
----
+Install the necessary Python package dependencies:
+pip install -r requirements.txt
 
-## Phase 2: Run Well Alignment Computations
+Workspace Verification: Ensure that the provided synthetic Excel logging files (e.g., All-J5 .xlsx, All-J7A.xlsx) are visible within your local data/ directory. The analysis notebooks are hardcoded to ingest inputs directly from this relative path.
 
-With your synthetic sandbox data successfully initialized, you can run any individual matching notebook:
-
-1. Open a target matching combination file (e.g., **`gs172_2_j5.ipynb`**).
-2. Execute the setup cells to import baseline scientific libraries (`pandas`, `numpy`, `matplotlib`, `scikit-learn`).
-3. Run the data ingestion block. The notebook will automatically pull the synthetic files from your root folder, index the log variables, and run the constrained cost matrix calculations.
-4. **Verify the Results:** The final cell executes the custom visualization block, outputting a high-resolution, twin-panel plot with dark red tie-lines linking corresponding horizons across the well structures using your optimal `window_percents` ($\phi$) value. The output is automatically saved as a production-grade image file inside your local `/L_curve` folder.
+Phase 2: Running Alignment ComputationsWith the environment configured, you can execute any structural matching profile in the workspace:Launch your local Jupyter workspace (jupyter notebook) or open the directory within your preferred IDE.Navigate into the notebooks/ directory and open a target processing file (for example, J5_J7A.ipynb).Execute the code blocks sequentially from top to bottom.Expected Pipeline Behavior:Data Ingestion: The notebook loads the designated .xlsx workbooks directly from the ../data/ directory.Preprocessing & Scaling: The numeric log channels are isolated and normalized.Warp Optimization: The constrained Dynamic Time Warping path runs utilizing your optimal window_percents ($\phi$) constraint.Review Results: The final cell renders a high-contrast well panel plot with dark-red tie-lines locking corresponding structural horizons across the stratigraphy. The resulting figure exports automatically as a publication-ready graphic file inside your local workspace.
