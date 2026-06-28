@@ -33,7 +33,7 @@ When a well-pair processing notebook is executed, the pipeline steps through thr
 * **Description:** Optimization of the Sakoe-Chiba (SC) window parameter shown in the form of an L-curve to identify the optimal SC Parameter value ($\phi$).
 
 ### Stage 2: Constrained Warping Path 
-* **Description:** The minimum-cost warping path trajectory overlaid on the cumulative cost matrix, dynamically constrained within the optimal Sakoe-Chiba window parameter.
+* **Description:** The minimum-cost warping path overlaid on the cumulative cost matrix, dynamically constrained within the optimal Sakoe-Chiba window parameter.
 
 ### Stage 3: Well-to-Well Correlation
 * **Description:** The final well-to-well correlation panel displaying the target logs (NPHI or GR) side-by-side for the wells processed in the selected notebook. This correlation is based on Dynamic Space Warping (DSW) calculations, constrained using the Sakoe-Chiba parameter. The plot includes background color-fills for the lithology zones, connected by explicit correlation paths between the aligned depths, and the final graphic is automatically saved as a `.jpg` image.
