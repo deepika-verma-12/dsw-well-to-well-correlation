@@ -1,7 +1,6 @@
-# User Guide: Software Specifications, Configuration Options & Expected Behavior
+# User Guide: Inputs, Outputs, and Tunable Options
 
-This document serves as the formal technical manual describing the underlying data structures, hyperparameter selections, and algorithmic execution behaviors for the constraint-based well-log alignment framework.
-
+This guide describes the data file schemas, configuration options, and expected operational behaviors for replicating the well-log correlation framework.
 
 ## 📊 1. Input Data Specifications & Preprocessing
 
