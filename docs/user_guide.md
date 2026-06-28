@@ -13,7 +13,7 @@ To ensure seamless execution, target subsurface profiles must strictly conform t
   * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray logs recorded in standard API units).
   * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log channel index values).
 
-Prior to distance matrix construction, log channels are automatically standardized:
+Prior to cost matrix construction, log channels are automatically standardized:
 
 $$z = \frac{x - \mu}{\sigma}$$
 
