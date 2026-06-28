@@ -1,22 +1,22 @@
-# Automated Stratigraphic Correlation via Constraint-Based DTW
+# Automated Stratigraphic Correlation via Constraint-Based Dynamic Space Warping
 
 ## 📝 Overview
-This repository provides a Python-based scientific implementation for automated stratigraphic well-log alignment using Dynamic Time Warping (DTW) with a customizable Sakoe-Chiba window constraint.
+This repository provides a Python-based scientific implementation for automated stratigraphic well-log alignment using Dynamic Space Warping (DSW) with a customizable Sakoe-Chiba window constraint.
 
 ---
 
-## 🔒 Confidentiality & Use of Synthetic Data
-The authentic subsurface well-log datasets utilized to develop and validate this methodology belong to the October Oil Field (Suez Rift, Egypt). Due to strict corporate data privacy policies and industrial confidentiality agreements, the raw field production data cannot be made publicly available. 
+## 🔒 Data Privacy & Use of Synthetic Data
+The subsurface well-log datasets utilized to develop and validate this methodology belong to the October Oil Field (Gulf of Suez, Egypt). Due to data privacy requirements and confidentiality restrictions, the raw field production data cannot be made publicly available.
 
-To satisfy the open-science reproducibility guidelines of *Computers & Geosciences*, this repository includes the final pre-generated synthetic datasets located directly within the `data/` folder. To ensure seamless replication of the manuscript workflow, the file names (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) match the physical well designations studied in the paper; however, the underlying numeric logging curves have been completely randomized and simulated to protect data privacy.
+To satisfy the open-science reproducibility guidelines of *Computers & Geosciences*, this repository includes the final pre-generated synthetic datasets located directly within the `data/` folder. **Note:** To ensure direct reproducibility of the manuscript, the file names (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) match the physical well designations studied in the paper; however, the underlying numeric logging curves have been completely randomized and simulated to protect data privacy.
 
 ---
 
 ## 📚 Project Documentation & User Manuals
 Comprehensive instructions, technical specifications, and execution walkthroughs have been separated into dedicated documentation modules to ensure repository clarity:
 
-* **[User Guide: Data Specifications & Options](./docs/user_guide.md)** — Detailed manual outlining file schemas, logging tracks, variable normalization, and tunable mathematical constraints.
-* **[How-To Tutorial: Replicating the Pipeline](./docs/tutorial.md)** — A step-by-step walkthrough detailing environment setup, synthetic database generation, and notebook execution.
+* **[User Guide: Data Specifications & Options](./docs/user_guide.md)** — A comprehensive user guide describing inputs, outputs, tunable options, and expected behavior.
+* **[How-To Tutorial: Replicating the Pipeline](./docs/tutorial.md)** — A practical tutorial providing how-to instructions and execution workflows for typical use cases.
 
 ---
 
