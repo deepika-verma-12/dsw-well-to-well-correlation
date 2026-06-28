@@ -32,16 +32,13 @@ This balances numeric scales across different logging channels (e.g., Gamma Ray 
 
 ## 🧠 3. Expected Operational Behavior & Outputs
 
-When a well-pair notebook is executed, the pipeline processes both Gamma Ray (GR) and Neutron Porosity (NPHI) logs through three sequential visual stages:
+When a well-pair processing notebook is executed, the pipeline steps through three key visual optimization and alignment stages:
 
-### Stage 1: L-Curve Parameter Optimization
-* **What it does:** Plots Sakoe-Chiba window constraint percentages against cumulative alignment cost.
-* **Output:** An L-curve graph revealing a clear inflection "elbow" to identify the optimal window value ($\phi$).
+### Stage 1: Sakoe-Chiba Window Optimization
+* **Description:** Optimization of the Sakoe-Chiba (SC) window parameter shown in the form of an L-curve to identify the optimal SC Parameter value ($\phi$).
 
-### Stage 2: Cumulative Cost Matrix Overlay
-* **What it does:** Generates a 2D distance grid masked by the optimized window constraint ($\phi$).
-* **Output:** A cumulative cost matrix heatmap featuring the optimal minimum-cost warping path plotted on top as a continuous trajectory line.
+### Stage 2: Constrained Warping Path trajectories
+* **Description:** The minimum-cost warping path trajectory overlaid on the cumulative cost matrix, dynamically constrained within the optimal Sakoe-Chiba window SC parameter.
 
-### Stage 3: Final Well-to-Well Correlation Panel
-* **What it does:** Translates the computed warping path coordinates into explicit depth-to-depth tie lines.
-* **Output:** A twin-panel log plot mapping the wells side-by-side with background stratigraphic zone color-fills connected by clean, dark-red correlation lines. Figures save automatically as `.jpg` files.
+### Stage 3: Lithological Well Panel Alignments
+* **Description:** Final visual well-to-well correlation panel displaying the target logs side-by-side with background stratigraphic zone color-fills connected by clear, explicit correlation paths between the aligned lithologies. Output graphics save automatically as `.jpg` images.
