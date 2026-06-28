@@ -1,6 +1,6 @@
 # How-To Tutorial: Step-by-Step Pipeline Replication
 
-This tutorial guides you through setting up your local repository workspace and running the well-log correlation workflow using the provided synthetic datasets.
+This tutorial demonstrates a step-by-step example workflow for executing the constrained Dynamic Space Warping framework on a well correlation pair.
 
 ---
 
@@ -10,6 +10,8 @@ This tutorial guides you through setting up your local repository workspace and 
    ```bash
    git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
    cd dsw-well-to-well-correlation
+
+Alternatively, you can click the green "Code" button on the GitHub page and select "Download ZIP".
 
 2. **Install Dependencies**  
    Install the necessary Python package dependencies using your system terminal:
