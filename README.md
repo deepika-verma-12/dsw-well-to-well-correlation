@@ -29,6 +29,5 @@ Comprehensive instructions, technical specifications, and execution walkthroughs
 
 Install Dependencies:
 
-Bash
+```bash
 pip install -r requirements.txt
-Navigate directly to the How-To Tutorial to verify your data directory layout and execute the correlation pipelines.
