@@ -2,7 +2,7 @@
 
 This guide describes the data file schemas, configuration options, and expected operational behaviors for replicating the well-log correlation framework.
 
-## 📊 1. Input Data Specifications & Preprocessing
+## 1. Input Data Specifications & Preprocessing
 
 To ensure seamless execution, target subsurface profiles must strictly conform to the structural layout outlined below. 
 
@@ -19,13 +19,13 @@ $$z = \frac{x - \mu}{\sigma}$$
 
 ---
 
-## ⚙️ 2. Tunable Hyperparameters & Software Options
+## 2. Tunable Hyperparameters & Software Options
 
 * **`window_percents`** (Float, range `0.0` to `1.0`): Specifies the Sakoe-Chiba window constraint width, corresponding to the parameter $\phi$ in the manuscript text. It is expressed as a decimal representation of a percentage of the total sequence length, restricting the warping path search window to ensure a realistic warping path and geologically realistic correlation.
 
 ---
 
-## 🧠 3. Expected Operational Behavior & Outputs
+## 3. Expected Operational Behavior & Outputs
 
 When a well-pair processing notebook is executed, the pipeline steps through three key visual optimization and alignment stages:
 
