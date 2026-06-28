@@ -6,7 +6,7 @@ This repository provides a Python-based scientific implementation for automated 
 
 ---
 
-## 🔒 Data Privacy & Use of Synthetic Data
+## Data Privacy & Use of Synthetic Data
 The subsurface well-log datasets utilized to develop and validate this methodology belong to the October Oil Field (Gulf of Suez, Egypt). Due to data privacy requirements and confidentiality restrictions, the raw field data cannot be made publicly available.
 
 To facilitate workflow replication, this repository provides pre-generated synthetic datasets located directly within the `data/` folder. These files retain the original naming conventions used throughout the manuscript, but the underlying log curves are fully synthetic to protect data privacy.
