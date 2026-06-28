@@ -20,12 +20,13 @@ pip install -r requirements.txt
 3. Workspace Verification Ensure that the provided synthetic Excel logging files (e.g., All-J5 .xlsx, All-J7A.xlsx) are visible   within your local data/ directory. The analysis notebooks are hardcoded to ingest inputs directly from this relative path.
 
 
-Phase 2: Running Alignment Computations
-With the environment configured, you can execute any structural matching profile in the workspace:
+## Phase 2: Running Alignment Computations
 
-Launch Workspace Launch your local Jupyter workspace (jupyter notebook) or open the repository directory within your preferred IDE.
+1. With the environment configured, you can execute any structural matching profile in the workspace:
 
-Open Notebook Navigate into the notebooks/ directory and open a target processing file (for example, J5_J7A.ipynb).
+2. Launch Workspace Launch your local Jupyter workspace (jupyter notebook) or open the repository directory within your preferred IDE.
+
+3. Open Notebook Navigate into the notebooks/ directory and open a target processing file (for example, J5_J7A.ipynb).
 
 Execute Cells Execute the code blocks sequentially from top to bottom.
 
