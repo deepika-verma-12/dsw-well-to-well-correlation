@@ -26,3 +26,9 @@ Comprehensive instructions, technical specifications, and execution walkthroughs
    git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
    cd dsw-well-to-well-correlation
    pip install -r requirements.txt
+
+Install Dependencies:
+
+Bash
+pip install -r requirements.txt
+Navigate directly to the How-To Tutorial to verify your data directory layout and execute the correlation pipelines.
