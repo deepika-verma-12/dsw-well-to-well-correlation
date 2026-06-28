@@ -9,9 +9,9 @@ To ensure seamless execution, target subsurface profiles must strictly conform t
 ### Spreadsheet Schema Requirements
 * **File Format:** Microsoft Excel (`.xlsx`) workbooks. Data arrays must reside within the first active spreadsheet.
 * **Direct Structural Indexing:** Slicing arrays map input logging curves based on explicit positional column channels:
-  * **Column Index 0:** `Depth` (Continuous numeric tracking vector recorded in feet).
-  * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray logs recorded in standard API units).
-  * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log channel index values).
+ * **Column Index 0:** `Depth` (Measured depth values recorded in feet).
+  * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray log recorded in standard API units).
+  * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log index values).
 
 Prior to cost matrix construction, log channels are automatically standardized:
 
@@ -19,7 +19,7 @@ $$z = \frac{x - \mu}{\sigma}$$
 
 ---
 
-## 2. Tunable Hyperparameters & Software Options
+## 2. Configuration Parameters
 
 * **`window_percents`** (Float, range `0.0` to `1.0`): Specifies the Sakoe-Chiba window constraint width, corresponding to the parameter $\phi$ in the manuscript text. It is expressed as a decimal representation of a percentage of the total sequence length, restricting the warping path search window to ensure a realistic warping path and geologically realistic correlation.
 
@@ -29,7 +29,7 @@ $$z = \frac{x - \mu}{\sigma}$$
 
 When a well-pair processing notebook is executed, the pipeline steps through three key visual optimization and alignment stages:
 
-### Stage 1: Sakoe-Chiba Window Optimization
+### Stage 1: Sakoe-Chiba Window Selection
 * **Description:** Optimization of the Sakoe-Chiba (SC) window parameter shown in the form of an L-curve to identify the optimal SC Parameter value ($\phi$).
 
 ### Stage 2: Constrained Warping Path 
