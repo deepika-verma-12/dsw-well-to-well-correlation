@@ -21,6 +21,17 @@ Comprehensive instructions, technical specifications, and execution walkthroughs
 
 ---
 
+## ⚙️ System & Computational Requirements
+
+* **Operating System:** Windows, macOS, or Linux
+* **Python Version:** Python 3.10.5 (or compatible 3.10+ versions)
+* **Hardware:** Standard computational resources (Minimum 4GB RAM recommended; no specialized GPU acceleration required)
+* **Program Size:** ~10.1 MB
+
+---
+
+
+
 ## Quick Start
 1. Clone the repository and install the baseline environment requirements:
    ```bash
