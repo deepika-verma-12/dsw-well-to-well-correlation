@@ -21,8 +21,7 @@ $$z = \frac{x - \mu}{\sigma}$$
 
 ## ⚙️ 2. Tunable Hyperparameters & Software Options
 
-* **`window_percents`** (Float, range `0.0` to `1.0`): Specifies the Sakoe-Chiba window constraint width, corresponding to the parameter $\phi$ in the manuscript text. It is expressed as a decimal representation of a percentage of the total sequence length, restricting the warping path grid search computation to a diagonal corridor bandwidth to limit extreme thickness variations.
-
+* **`window_percents`** (Float, range `0.0` to `1.0`): Specifies the Sakoe-Chiba window constraint width, corresponding to the parameter $\phi$ in the manuscript text. It is expressed as a decimal representation of a percentage of the total sequence length, restricting the warping path search window to ensure a realistic warping path and geologically realistic correlation.
 
 ---
 
