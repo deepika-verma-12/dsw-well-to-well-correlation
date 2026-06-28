@@ -15,13 +15,11 @@ To ensure seamless execution, target subsurface profiles must strictly conform t
   * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log channel index values).
 
 ### Automated Preprocessing
-Raw geophysical measurements span completely different physical magnitudes—Gamma Ray ranges from $0\text{--}150\text{ API}$ while Neutron Porosity evaluates fractions between $0.05\text{--}0.45\text{ v/v}$. 
-
-To counter signal imbalance, the software automatically standardizes input vectors prior to distance matrix construction utilizing a standard variance scaling approach:
+Raw geophysical measurements are automatically standardized prior to distance matrix construction using standard variance scaling:
 
 $$z = \frac{x - \mu}{\sigma}$$
 
-This guarantees both stratigraphic features exert uniform mathematical weight during path optimization regardless of their native recording units.
+This balances numeric scales across different logging channels (e.g., Gamma Ray and Neutron Porosity) to ensure uniform mathematical weight during path optimization.
 
 ---
 
