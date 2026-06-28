@@ -25,9 +25,7 @@ This balances numeric scales across different logging channels (e.g., Gamma Ray 
 
 ## ⚙️ 2. Tunable Hyperparameters & Software Options
 
-Users can modify specific core control parameters directly inside the individual well-pair processing notebooks:
-
-* **`window_percents`** (Float, range `0.0` to `1.0`): Defines the optimal Sakoe-Chiba window constraint width. This maps directly to the parameter notated as $\phi$ within the manuscript text. It is expressed as a decimal fraction of total sequence array length (e.g., setting `0.11` restricts the optimal warp path grid search computation to an 11% diagonal corridor bandwidth, enforcing geological reality by checking extreme thickness variations).
+* **`window_percents`** (Float, range `0.0` to `1.0`): Specifies the Sakoe-Chiba window constraint width, corresponding to the parameter $\phi$ in the manuscript text. It is expressed as a decimal representation of a percentage of the total sequence length, restricting the warping path grid search computation to a diagonal corridor bandwidth to limit extreme thickness variations.
 
 
 ---
