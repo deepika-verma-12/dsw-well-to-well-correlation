@@ -10,9 +10,14 @@ This tutorial guides you through setting up your local repository workspace and 
    ```bash
    git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
    cd dsw-well-to-well-correlation
-Install Dependencies Install the necessary Python package dependencies:Bashpip install -r requirements.txt
 
-Workspace Verification Ensure that the provided synthetic Excel logging files (e.g., All-J5 .xlsx, All-J7A.xlsx) are visible within your local data/ directory. The analysis notebooks are hardcoded to ingest inputs directly from this relative path.
+2. Install Dependencies Install the necessary Python package dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Workspace Verification Ensure that the provided synthetic Excel logging files (e.g., All-J5 .xlsx, All-J7A.xlsx) are visible   within your local data/ directory. The analysis notebooks are hardcoded to ingest inputs directly from this relative path.
 
 
 Phase 2: Running Alignment Computations
