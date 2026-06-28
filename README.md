@@ -1,7 +1,7 @@
 # Well-to-Well Correlation analysis of Geophysical Well-log data of the October Oil Field Gulf of Suez Using Dynamic Space Warping Technique
 
 
-## 📝 Overview
+## Overview
 This repository provides a Python-based scientific implementation for automated stratigraphic well-log alignment using Dynamic Space Warping (DSW) with a customizable Sakoe-Chiba window constraint.
 
 ---
@@ -13,7 +13,7 @@ To facilitate workflow replication, this repository provides pre-generated synth
 
 ---
 
-## 📚 Project Documentation & User Manuals
+## Project Documentation & User Manuals
 Comprehensive instructions, technical specifications, and execution walkthroughs have been separated into dedicated documentation modules to ensure repository clarity:
 
 * **[User Guide: Data Specifications & Options](./docs/user_guide.md)** — A comprehensive user guide describing inputs, outputs, tunable options, and expected behavior.
@@ -21,7 +21,7 @@ Comprehensive instructions, technical specifications, and execution walkthroughs
 
 ---
 
-## 🛠️ Quick Start
+## Quick Start
 1. Clone the repository and install the baseline environment requirements:
    ```bash
    git clone [https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git](https://github.com/deepika-verma-12/dsw-well-to-well-correlation.git)
