@@ -8,7 +8,7 @@ This repository provides a Python-based scientific implementation for automated 
 ## 🔒 Confidentiality & Use of Synthetic Data
 The authentic subsurface well-log datasets utilized to develop and validate this methodology belong to the October Oil Field (Suez Rift, Egypt). Due to strict corporate data privacy policies and industrial confidentiality agreements, the raw field production data cannot be made publicly available. 
 
-To satisfy the open-science reproducibility guidelines of *Computers & Geosciences*, this repository utilizes a programmatic data generator to produce synthetic sandbox datasets. These simulated logs mirror the exact structural dimensionality, data ranges, and variance properties of the real field logs. This allows researchers to completely test, verify, and execute the entire alignment pipeline without compromising restricted data assets.
+To satisfy the open-science reproducibility guidelines of *Computers & Geosciences*, this repository includes the final pre-generated synthetic datasets located directly within the `data/` folder. To ensure seamless replication of the manuscript workflow, the file names (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) match the physical well designations studied in the paper; however, the underlying numeric logging curves have been completely randomized and simulated to protect data privacy.
 
 ---
 
