@@ -13,12 +13,9 @@ To ensure seamless execution, target subsurface profiles must strictly conform t
   * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray logs recorded in standard API units).
   * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log channel index values).
 
-### Automated Preprocessing
-Raw geophysical measurements are automatically standardized prior to distance matrix construction using standard variance scaling:
+Prior to distance matrix construction, log channels are automatically standardized:
 
 $$z = \frac{x - \mu}{\sigma}$$
-
-This balances numeric scales across different logging channels (e.g., Gamma Ray and Neutron Porosity) to ensure uniform mathematical weight during path optimization.
 
 ---
 
