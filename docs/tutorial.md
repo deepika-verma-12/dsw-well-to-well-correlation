@@ -20,13 +20,13 @@ Alternatively, you can click the green "Code" button on the GitHub page and sele
 
 
 3. **Workspace Verification**  
-   Ensure that the provided synthetic Excel logging files (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) are visible within your local `data/` directory. The analysis notebooks are hardcoded to ingest inputs directly from this relative path.
+   Ensure that the provided synthetic Excel logging files (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) are located within the local `data/` directory. The analysis notebooks are configured to read input data directly from this relative path.
 
 ---
 
-## 🚀 Phase 2: Running Alignment Computations
+## Phase 2: Running Alignment Computations
 
-With the environment configured, you can execute any structural matching profile in the workspace by following these steps:
+Once the environment is configured, the notebooks can be executed within the workspace by following these steps:
 
 1. **Launch Workspace**  
    Launch your local Jupyter workspace (`jupyter notebook`) or open the repository directory within your preferred IDE.
@@ -39,9 +39,9 @@ With the environment configured, you can execute any structural matching profile
 
 ---
 
-## 📋 Expected Pipeline Behavior
+## 📋 Expected Notebook Execution Flow
 
-* **Data Ingestion:** The notebook loads the designated `.xlsx` workbooks directly from the `../data/` directory.
-* **Preprocessing & Scaling:** The numeric log channels are isolated and normalized automatically.
-* **Warp Optimization:** The constrained Dynamic Time Warping path runs utilizing your optimal `window_percents` ($\phi$) constraint.
-* **Review Results:** The final cell renders a high-contrast well panel plot with background stratigraphic zone color-fills and clean, dark-red correlation lines. Figures save automatically as `.jpg` files.
+* **Data Loading:** The notebook reads the `.xlsx` files directly from the `../data/` directory.
+* **Data Preparation:** The selected well-log curves are prepared and processed for the alignment.
+* **Warping Computation:** The constrained Dynamic Space Warping path is calculated using the specified window constraint parameter ($p$).
+* **Visualization Output:** The final code block generates a well-log correlation plot with colored stratigraphic zones and correlation lines. The final figure is automatically saved as a `.jpg` file.
