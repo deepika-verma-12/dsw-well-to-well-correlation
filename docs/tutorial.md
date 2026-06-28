@@ -42,6 +42,6 @@ Once the environment is configured, the notebooks can be executed within the wor
 ## 📋 Expected Notebook Execution Flow
 
 * **Data Loading:** The notebook reads the `.xlsx` files directly from the `../data/` directory.
-* **Data Preparation:** The selected well-log curves are prepared and processed for the alignment.
-* **Warping Computation:** The constrained Dynamic Space Warping path is calculated using the specified window constraint parameter ($p$).
+* **Data Preparation:** The selected well-log curves (applicable to both NPHI and GR data using the same code structure) are prepared and processed for the alignment.
+* **Warping Computation:** The constrained Dynamic Space Warping path is calculated using the specified window constraint parameter ($\phi$).
 * **Visualization Output:** The final code block generates a well-log correlation plot with colored stratigraphic zones and correlation lines. The final figure is automatically saved as a `.jpg` file.
