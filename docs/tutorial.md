@@ -20,7 +20,7 @@ Alternatively, you can click the green "Code" button on the GitHub page and sele
 
 
 3. **Workspace Verification**  
-   Ensure that the provided synthetic Excel logging files (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) are located within the local `data/` directory. The analysis notebooks are configured to read input data directly from this relative path.
+   Ensure that the provided synthetic Excel well log files (e.g., `All-J5 .xlsx`, `All-J7A.xlsx`) are located within the local `data/` directory. The analysis notebooks are configured to read input data directly from this relative path.
 
 ---
 
