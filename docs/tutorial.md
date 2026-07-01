@@ -1,7 +1,6 @@
 # How-To Tutorial: Step-by-Step Pipeline Replication
 
-This tutorial demonstrates a step-by-step example workflow for executing the constrained Dynamic Space Warping framework on a well correlation pair.
-
+This tutorial demonstrates a step-by-step workflow for running the Dynamic Space Warping code on different well pairs.
 ---
 
 ## Phase 1: Environment Preparation
@@ -35,13 +34,15 @@ Once the environment is configured, the notebooks can be executed within the wor
    Navigate into the `notebooks/` directory and open a target processing file (for example, `J5_J7A.ipynb`).
 
 3. **Execute Cells**  
-   Execute the code blocks sequentially from top to bottom.
-
+Go to the top menu of the notebook, click Cell, and select Run All (or press Shift + Enter to run each cell sequentially from top to bottom) to run the entire analysis.
 ---
 
 ## 📋 Expected Notebook Execution Flow
 
 * **Data Loading:** The notebook reads the `.xlsx` files directly from the `../data/` directory.
-* **Data Preparation:** The selected well-log curves (applicable to both NPHI and GR data using the same code structure) are prepared and processed for the alignment.
-* **Warping Computation:** The constrained Dynamic Space Warping path is calculated using the specified window constraint parameter ($\phi$).
+* ** Data Preprocessing: Standardizes both Gamma Ray (GR) and Neutron Porosity (NPHI) curves using StandardScaler (Z-score normalization) to achieve a mean of 0 and a standard deviation of 1.
+Window Optimization: Executes a grid search across constraint percentages to identify the optimal Sakoe-Chiba window via elbow curve analysis.
+Distance & Path Computation: Calculates the minimum alignment cost and the optimal warping path using the constrained Dynamic Space Warping algorithm.
+Output Visualization: Each notebook pipeline executes completely from top to bottom and automatically generates 6 final figures (3 for GR and 3 for NPHI):
+
 * **Visualization Output:** The final code block generates a well-log correlation plot with colored stratigraphic zones and correlation lines. The final figure is automatically saved as a `.jpg` file.
