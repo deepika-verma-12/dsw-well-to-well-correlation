@@ -6,14 +6,14 @@ This guide describes the data file schemas, configuration options, and expected 
 
 To ensure seamless execution, target subsurface profiles must strictly conform to the structural layout outlined below. 
 
-### Spreadsheet Schema Requirements
+### Excel Requirements
 * **File Format:** Microsoft Excel (`.xlsx`) files. All data must be placed in the very first tab (Sheet 1) of the Excel file.
 * **Column Positions:** The code reads and maps your well logs based on their specific column numbers:
 *  * **Column Index 0:** `Depth` (Measured depth values recorded in feet).
 *  * **Column Index 1:** `GR` / `GR (API)` (Gamma Ray log recorded in standard API units).
 *  * **Column Index 2:** `Neutron Porosity` / `NPHI` (Neutron Porosity log index values).
 
-Prior to cost matrix construction, log channels are automatically standardized:
+Prior to cost matrix construction, the well data is automatically standardized:
 
 $$z = \frac{x - \mu}{\sigma}$$
 
