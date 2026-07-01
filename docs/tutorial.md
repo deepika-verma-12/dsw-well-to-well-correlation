@@ -40,7 +40,7 @@ Go to the top menu of the notebook, click Cell, and select Run All (or press Shi
 ## 📋 Expected Notebook Execution Flow
 
 * **Data Loading:** The notebook reads the `.xlsx` files directly from the `../data/` directory.
-* ** Data Preprocessing: Standardizes both Gamma Ray (GR) and Neutron Porosity (NPHI) curves using StandardScaler (Z-score normalization) to achieve a mean of 0 and a standard deviation of 1.
+* ** Data Preprocessing:** Standardizes both Gamma Ray (GR) and Neutron Porosity (NPHI) curves using StandardScaler (Z-score normalization) to achieve a mean of 0 and a standard deviation of 1.
 Window Optimization: Executes a grid search across constraint percentages to identify the optimal Sakoe-Chiba window via elbow curve analysis.
 Distance & Path Computation: Calculates the minimum alignment cost and the optimal warping path using the constrained Dynamic Space Warping algorithm.
 Output Visualization: Each notebook pipeline executes completely from top to bottom and automatically generates 6 final figures (3 for GR and 3 for NPHI):
